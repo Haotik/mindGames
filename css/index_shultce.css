@@ -1,0 +1,29 @@
+
+.tables{
+	background-color: black;
+	width: 250px;
+	height: 250px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: white;
+	border: 1px solid black;
+	justify-content: center;
+	align-items:center;
+}
+
+.tables .number, .tables .numberClick{
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.number:hover{
+	background-color: grey;	
+}
+
+.falseNumber, .falseNumber:hover{
+	background-color: red;
+}
