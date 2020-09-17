@@ -9,7 +9,7 @@ function cssLoader(){
 	$currentPage = getCurrentPage();
 	foreach ($allCssFiles as $cssFile) {
 		if (strstr($cssFile, $currentPage)) {?>
-			<link rel="stylesheet" href="css/<?php echo $cssFile?>">
+			<link rel="stylesheet" href="css/<?=$cssFile?>">
 		<?php }
 	}
 }

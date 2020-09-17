@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
 	shultceTables();
-	anagrams();
+	anagramsLetterClick();
+	checkWord();
 });
 
 function shultceTables(){
-		counter = 0;
+		var counter = 0;
 		$('.number').each(function(){
 			var cur_date = new Date();
 			$(this).click(function(){
@@ -28,11 +29,26 @@ function shultceTables(){
 		})
 	};
 
-function anagrams(){
+function anagramsLetterClick(){
 	$('.letter').each(function (){
 		$(this).click(function(){
 			var data = $('#inputWordText').val() + $(this).text();
 			$('#inputWordText').val(data);
+		});
+	});
+};
+
+function checkWord(){
+	$('#checkWordVariant').click(function(){
+		var checkWord = $('#inputWordText').val();
+		$.ajax({
+		    type: "POST",
+		    data:"word=" +checkWord,
+		 	url: 'php/anagramsSearchResult.php',
+		  	success: function(data){
+			    $('.ajaxResult').text(data);
+			    $('#inputWordText').val('');
+			}
 		});
 	});
 };

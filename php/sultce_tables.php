@@ -6,5 +6,5 @@ for ($i=1;$i<=25;$i++){
 shuffle($numbers);
 
 foreach ($numbers as $value) {?>
-	<div class="number"><?php echo $value ?></div>
+	<div class="number"><?=$value ?></div>
 <?php }
