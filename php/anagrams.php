@@ -25,13 +25,16 @@ while (implode($letters) == $word) {
 	shuffle($letters);
 }
 ?>
-	<div class="inputWord">
-		<input type="text" id="inputWordText">
-		<input type="submit" id="checkWordVariant" value="<=">
+<h4>Анаграмы</h4>
+	<div class="anagrams">
+		<div class="inputWord">
+			<input type="text" id="inputWordText">
+			<input type="submit" id="checkWordVariant" value="<=">
+		</div>
+		<div class="selectLetter">
+			<?php foreach ($letters as $letter) {?>
+				<span class="letter"><?=$letter?></span>
+			<?php } ?>
+		</div>
+		<div class="ajaxResult"></div>
 	</div>
-	<div class="selectLetter">
-		<?php foreach ($letters as $letter) {?>
-			<span class="letter"><?=$letter?></span>
-		<?php } ?>
-	</div>
-	<div class="ajaxResult"></div>

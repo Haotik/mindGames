@@ -13,16 +13,13 @@
 	<title>Игры разума</title>
 </head>
 <body>
-	<h4>Таблицы Шульце</h4>
-	<div class="tables">
+	<span class="gameSelect">Таблицы Шульце</span>
+	<span class="gameSelect">Анаграмы</span>
 		<?php
 			include_once 'php/sultce_tables.php';
 		?>
-	</div>
-	<div class="anagrams">
 		<?php
 			include_once 'php/anagrams.php';
 		?>
-	</div>
 </body>
 </html>
