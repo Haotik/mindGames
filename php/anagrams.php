@@ -8,7 +8,7 @@ if ($handle) {
     while (($buffer = fgets($handle, 4096)) !== false) {
     	if ($k == $stringNumber){
     		$word = str_replace(",", "", $buffer);
-    		$word = str_replace(" ", "", $word);
+    		$word = trim($word);
     	}
     	$k++;
     }
@@ -25,6 +25,12 @@ while (implode($letters) == $word) {
 	shuffle($letters);
 }
 ?>
+<script>
+	anagramsLetterClick();
+	checkWord();
+	checkWordOnEnter();
+</script>
+
 <h4>Анаграмы</h4>
 	<div class="anagrams">
 		<div class="inputWord">

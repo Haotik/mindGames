@@ -48,31 +48,26 @@ function anagramsLetterClick(){
 function checkWordOnEnter(){
 	$("#inputWordText").keyup(function(event){
     if(event.keyCode == 13){
-        var checkWord = $('#inputWordText').val();
-		$.ajax({
-		    type: "POST",
-		    data:"word=" +checkWord,
-		 	url: 'php/anagramsSearchResult.php',
-		  	success: function(data){
-			    $('.ajaxResult').text(data);
-			    $('#inputWordText').val('');
-			}
-		});
+       sendAjaxforAnagrams();
     }
 });
 };
 
 function checkWord(){
 	$('#checkWordVariant').click(function(){
-		var checkWord = $('#inputWordText').val();
-		$.ajax({
-		    type: "POST",
-		    data:"word=" +checkWord,
-		 	url: 'php/anagramsSearchResult.php',
-		  	success: function(data){
-			    $('.ajaxResult').text(data);
-			    $('#inputWordText').val('');
-			}
-		});
+		sendAjaxforAnagrams();
+	});
+};
+
+function sendAjaxforAnagrams(){
+	var checkWord = $('#inputWordText').val();
+	$.ajax({
+	    type: "POST",
+	    data:"word=" +checkWord,
+	 	url: 'php/anagramsSearchResult.php',
+	  	success: function(data){
+		    $('.ajaxResult').text(data);
+		    $('#inputWordText').val('');
+		}
 	});
 };

@@ -1,3 +1,7 @@
+<script>
+	shultceTables();
+</script>
+
 <h4>Таблицы Шульце</h4>
 <div class="tables">
 	<?php 
