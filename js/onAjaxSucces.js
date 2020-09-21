@@ -1,5 +1,10 @@
+var isLoad = false;
 $(document).ajaxSuccess(function() {
- 	shultceTables();
-	anagramsLetterClick();
-	checkWord();
+	if (!isLoad) {
+		isLoad = true;
+		shultceTables();
+		anagramsLetterClick();
+		checkWord();
+		checkWordOnEnter();
+	}
 });

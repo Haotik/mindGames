@@ -36,5 +36,6 @@ while (implode($letters) == $word) {
 				<span class="letter"><?=$letter?></span>
 			<?php } ?>
 		</div>
+		<?=$word?>
 		<div class="ajaxResult"></div>
 	</div>
