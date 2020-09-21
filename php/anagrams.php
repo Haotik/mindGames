@@ -3,7 +3,7 @@
 $stringNumber = rand(0,67774);
 $k = 0;
 
-$handle = @fopen("words.txt", "r");
+$handle = @fopen("../words.txt", "r");
 if ($handle) {
     while (($buffer = fgets($handle, 4096)) !== false) {
     	if ($k == $stringNumber){
