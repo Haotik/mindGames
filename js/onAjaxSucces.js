@@ -1,0 +1,3 @@
+$(document).ajaxSuccess(function() {
+
+});

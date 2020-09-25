@@ -1,6 +1,23 @@
 <?php 
-$word = "лоза";
-$variants = ["зал","зло","зола","лаз","лоза"];
+
+$stringNumber = rand(0,67774);
+$k = 0;
+
+$handle = @fopen("../words.txt", "r");
+if ($handle) {
+    while (($buffer = fgets($handle, 4096)) !== false) {
+    	if ($k == $stringNumber){
+    		$word = str_replace(",", "", $buffer);
+    		$word = trim($word);
+    	}
+    	$k++;
+    }
+    if (!feof($handle)) {
+        echo "Ошибка: fgets() неожиданно потерпел неудачу\n";
+    }
+    fclose($handle);
+}
+
 $letters = mb_str_split($word);
 $countOfLetters = count($letters);
 
@@ -8,14 +25,23 @@ while (implode($letters) == $word) {
 	shuffle($letters);
 }
 ?>
-<form action="#">
-	<div class="inputWord">
-		<input type="text" id="inputWordText">
-		<input type="submit" value="<=">
+<script>
+	anagramsLetterClick();
+	checkWord();
+	checkWordOnEnter();
+</script>
+
+<h4>Анаграмы</h4>
+	<div class="anagrams">
+		<div class="inputWord">
+			<input type="text" id="inputWordText">
+			<input type="submit" id="checkWordVariant" value="<=">
+		</div>
+		<div class="selectLetter">
+			<?php foreach ($letters as $letter) {?>
+				<span class="letter"><?=$letter?></span>
+			<?php } ?>
+		</div>
+		<?=$word?>
+		<div class="ajaxResult"></div>
 	</div>
-	<div class="selectLetter">
-		<?php foreach ($letters as $letter) {?>
-			<span class="letter"><?=$letter?></span>
-		<?php } ?>
-	</div>
-</form>
