@@ -1,0 +1,46 @@
+.step1_container {
+    display: flex;
+    flex-direction: row;
+    height: 230px;
+    justify-content: space-between;
+}
+
+.step1_option {
+    width: 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.step1_option_select {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid blue;
+}
+
+.step1_option_header {
+    float: right;
+    margin: 0px;
+    font-size: 1.5em;
+    text-align: center;
+    min-height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.step1_option_img {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    min-height: 75px;
+}
+
+.step1_option_price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: blue;
+}
